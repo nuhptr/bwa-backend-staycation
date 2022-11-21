@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/nuhptr/bwa-backend-staycation/issues"
   },
-  "homepage": "https://github.com/nuhptr/bwa-backend-staycation#readme"
+  "homepage": "https://github.com/nuhptr/bwa-backend-staycation#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
