@@ -44,6 +44,8 @@ booking : {
     proofPayment: string,
     bankForm : string,
     accountHolder: string,
+    imageUrl: string,
+    status: string,
 }
 
 member : {
