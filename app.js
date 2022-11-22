@@ -4,6 +4,25 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+const methodOverride = require("method-override");
+// import monggose
+const mongoose = require("mongoose");
+
+// connection staycation db
+mongoose
+  .connect("mongodb://localhost:27017/db_staycation", {
+    maxPoolSize: 10,
+    socketTimeoutMS: 45000,
+  })
+  .then(
+    () => {
+      console.log("Connected to staycation_db");
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 // admin endpoint
@@ -14,6 +33,9 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+// method override
+app.use(methodOverride("_method"));
 
 app.use(logger("dev"));
 app.use(express.json());
